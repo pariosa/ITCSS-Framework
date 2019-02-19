@@ -1,0 +1,29 @@
+﻿/**
+ * Divider Component
+ *
+ * Size Modifier(s):
+ * .c-divider--tiny-extend         - Modifies the margin of the divider component to be tiny. Extends '.c-divider'. *
+ *
+ * Notes:
+ * N1. In order to convert CSS Custom Properties from a number to a negative length - https://twitter.com/LeaVerou/status/737573310792237056
+ */
+
+.c-divider{ }
+
+/* ----- (extends .c-divider) ----- */
+
+.c-divider--dashed{ border-style:dashed;}
+
+.c-divider--extend-diminutive { margin-right: calc( -1 * var(--t-gutter--diminutive)) /* N1 */; margin-left: calc( -1 * var(--t-gutter--diminutive)) /* N1 */;}
+
+.c-divider--extend-tiny { margin-right: calc( -1 * var(--t-gutter--tiny)) /* N1 */; margin-left: calc( -1 * var(--t-gutter--small)) /* N1 */;}
+
+.c-divider--extend-small { margin-right: calc( -1 * var(--t-gutter--small)) /* N1 */; margin-left: calc( -1 * var(--t-gutter--small)) /* N1 */;}
+
+.c-divider--extend-medium { margin-right: calc( -1 * var(--t-gutter--medium)) /* N1 */; margin-left: calc( -1 * var(--t-gutter--medium)) /* N1 */;}
+
+.c-divider--extend{ margin-right: calc(-1 * var(--t-gutter)) /* N1 */; margin-left: calc(-1 * var(--t-gutter)) /* N1 */; }
+
+.c-divider--extend-large { margin-right: calc( -1 * var(--t-gutter--large)) /* N1 */; margin-left: calc( -1 * var(--t-gutter--large)) /* N1 */;}
+
+.c-divider--extend-huge { margin-right: calc( -1 * var(--t-gutter--huge)) /* N1 */; margin-left: calc( -1 * var(--t-gutter--huge)) /* N1 */;}

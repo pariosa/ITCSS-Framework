@@ -1,0 +1,32 @@
+﻿/*!
+ * WARNING: scope should be used sparingly - these should be used for a new styling context but may not necessarily cosmetic.
+ *
+ * Scope can be open to abuse and lead to poor CSS if not used wisely. If you find yourself having to call a certain scope style in multiple locations
+ * then it probably should be re-factored and moved outside of scope.
+ *
+ * Normally what would be used in scope would be things that we don't have control over - such as if we were using some third party content management system
+ * another case might be if we are needing to do certain styles that might be considered a 'one-off' or if it's a certain section of the site that needs to
+ * be styled a certain way that for certain pages but the markup remains the same with the exception of the class that get's appended which would be used as the
+ * scope hook.
+ *
+ */
+
+/**
+ * State Scope
+ *
+ * Certain 'States' may be trigger during different events which may affect multiple pages or components.
+ *
+ */
+.s-state{}
+.s-state--mobile-menu-is-open{position:relative; left:-85%;overflow:hidden; }
+.s-state--mobile-menu-is-open .c-primary-navigation__label--menu{ display:none; }
+.s-state--mobile-menu-is-open .c-primary-navigation__label--close{ display:block; }
+.s-state--mobile-menu-is-open .l-global-header-container{ position:fixed; top:0; width:100%; backface-visibility:hidden; z-index:1; }
+.s-state--mobile-menu-is-open .c-primary-navigation--header .c-primary-navigation__inner{width:100%;left:15%; height:100%; }
+.s-state--mobile-menu-is-open .c-primary-navigation--mobile {height:100%;}
+.s-state--mobile-menu-is-open .c-global-modal-cover{ display:block; }
+.s-state--mobile-menu-is-open .c-primary-navigation--header {height:auto;position:relative;}
+.s-state--mobile-menu-is-open .c-primary-navigation__mobile-item {width:85%}
+.s-state--mobile-menu-is-open .c-primary-navigation__inner .c-primary-navigation__wrapper {padding-left:0px;}
+.s-state--mobile-menu-is-open .c-primary-navigation__inner .c-primary-navigation__wrapper .c-primary-navigation__section .o-flag {padding:0.125rem;}
+.s-state--mobile-menu-is-open .c-primary-navigation__inner .c-primary-navigation__wrapper .c-primary-navigation__section {border:1px,solid, var(--t-border-content-block); background-color:var(--t-background-alternative-block)}

@@ -1,0 +1,137 @@
+﻿/**
+ * Base styles: opinionated defaults that provides a starting point more suitable for web applications.
+ *
+ */
+
+
+/**
+ * 1. Design Tip: Never Use Black: http://ianstormtaylor.com/design-tip-never-use-black/
+ * 2. Eliminate horizontal centering "page jumps": http://css-tricks.com/eliminate-jumps-in-horizontal-centering-by-forcing-a-scroll-bar/
+ * 3. Prevent margin and border from affecting element width. https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+
+html { color: #222 /* 1 */; overflow-y: scroll /* 2 */; min-height: 100% /* 2 */; box-sizing: border-box /* 3 */;}
+*, *::before, *::after { box-sizing: inherit /* 3 */; }
+
+
+/**
+ * 1. Don't show your underwear... http://www.zeldman.com/2008/11/07/is-your-websites-underwear-showing/
+ */
+
+body { background: #fff; }
+
+
+/**
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ * 1. Defaulting to a blue which has a 4.7 contrast ratio from #fff http://leaverou.github.io/contrast-ratio/#%23fff-on-%230074D9
+ */
+
+::selection { color: #fff /* 1 */; background: #0074d9 /* 1 */; text-shadow: none; }
+
+
+/**
+ * Placeholder styles
+ */
+
+/* WebKit browsers */
+::-webkit-input-placeholder { color: #aaa; }
+
+/* Mozilla Firefox 19+ */
+::-moz-placeholder { color: #aaa; }
+
+/* MS Edge */
+::-ms-input-placeholder { color: #aaa; }
+
+/* Internet Explorer 10+ */
+:-ms-input-placeholder { color: #aaa; }
+
+
+/**
+ * A better looking default horizontal rule
+ */
+
+hr { display: block; height: 1px; margin: 1em 0; padding: 0; border: 0; border-top: 1px solid #ccc; }
+
+
+/**
+ * Remove default fieldset styles.
+ */
+
+fieldset { margin: 0; padding: 0; border: 0; }
+
+
+/**
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea { resize: vertical; }
+
+
+/**
+ * 1. So that `alt` text is visually offset if images don’t load.
+ * 2. Fluid images.
+ * 3. Maintain aspect ratio of scaled images
+ */
+
+img { font-style: italic /* 1 */; max-width: 100% /* 2 */; height: auto /* 3 */; }
+
+
+/**
+ * Non-fluid images if you specify `width` and/or `height` attributes.
+ */
+
+img[width],
+img[height] { max-width: none; }
+
+
+/**
+ * Give form elements some cursor interactions...
+ */
+
+label,
+input,
+textarea,
+button,
+select,
+option { cursor: pointer; }
+
+
+/**
+ * Give a not-allowed cursor to elements that are disabled
+ */
+
+[disabled], button[disabled], html input[disabled], :disabled, .u-disabled:hover { cursor: not-allowed !important; }
+
+/**
+ * Don't show pointer cursor on readonly inputs
+ */
+
+[readonly] { cursor: default; }
+
+
+/**
+ * Give a help cursor to elements that give extra info on `:hover`.
+ */
+
+abbr[title], dfn[title], [rel="help"], .help:hover { cursor: help; }
+
+
+/**
+ * Suppress the focus outline on elements that cannot be accessed via keyboard.
+ * This prevents an unwanted focus outline from appearing around elements that
+ * might still respond to pointer events.
+ */
+
+[tabindex="-1"]:focus { outline: none !important; }
+
+
+/**
+ * Set table cells to be vertically align to the top
+ */
+
+td {  vertical-align: top; }
+

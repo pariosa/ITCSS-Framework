@@ -1,0 +1,56 @@
+﻿/**
+ * Media Object Pattern
+ * http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ *
+ * The media object can be used any time you have an image or other media and text next to each other.
+ * 1. Micro clearfix (Grouped in Clearfix-styles), as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+ *
+ * Position Modifier(s):
+ * .o-media--reverse      - Modifies the image location (right instead of left). Extends '.o-media' and can be combined with any of the 'Size Modifiers'.
+ *
+ * Size Modifier(s):
+ * .o-media--tiny         - Modifies the gutter of the media object to be tiny. Extends '.o-media'.
+ * .o-media--small        - Modifies the gutter of the media object to be small. Extends '.o-media'.
+ * .o-media--large        - Modifies the gutter of the media object to be large. Extends '.o-media'.
+ * .o-media--huge         - Modifies the gutter of the media object to be huge. Extends '.o-media'.
+ * .o-media--flush        - Modifies the gutter of the media object to be have no space between media element and text. Extends '.o-media'.
+ *
+ * Example Usage:
+ * <div class="o-media">
+ *     <a href="http://www.example.com" class="o-media__image">
+ *         <img src="http://example.com/images/example.png" alt="" />
+ *      </a>
+ *      <div class="o-media__body">
+ *      </div>
+ * </div>
+ *
+ */
+
+.o-media { display: block; margin: var(--t-gutter); }
+    /* .o-media:after { display: table; clear: both; content: ''; } */ /* 1 */
+
+    .o-media__body { display: block; overflow: hidden; }
+
+    .o-media__image { float: left; margin-right: var(--t-gutter); }
+    .o-media__image img, .o-media__image > svg { display: block; }
+
+
+/* ----- (extends media) ----- */
+.o-media--reverse .o-media__image { float: right; margin-right: 0; margin-left: var(--t-gutter); }
+
+.o-media--tiny .o-media__image { margin-right: var(--t-gutter--tiny); }
+.o-media--tiny.o-media--reverse .o-media__image { margin-right: 0; margin-left: var(--t-gutter--tiny); }
+
+.o-media--small .o-media__image { margin-right: var(--t-gutter--small); }
+.o-media--small.o-media--reverse .o-media__image { margin-right: 0; margin-left: var(--t-gutter--small); }
+
+.o-media--medium .o-media__image { margin-right: var(--t-gutter--medium); }
+.o-media--medium.o-media--reverse .o-media__image { margin-right: 0; margin-left: var(--t-gutter--medium); }
+
+.o-media--large .o-media__image { margin-right: var(--t-gutter--large); }
+.o-media--large.o-media--reverse .o-media__image { margin-right: 0; margin-left: var(--t-gutter--large); }
+
+.o-media--huge .o-media__image { margin-right: var(--t-gutter--huge); }
+.o-media--huge.o-media--reverse .o-media__image { margin-right: 0; margin-left: var(--t-gutter--huge); }
+
+.o-media--flush .o-media__image { margin-right: 0; margin-left: 0; }

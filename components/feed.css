@@ -1,0 +1,150 @@
+﻿/**
+ * Feed Component
+ *
+ * A feed consists of a list of recurring elements of similar types. Examples of a feed would be a discussion or activity timeline.
+ *
+ * Notes:
+ * N1. By using a negative z-index it will prevent the user from interacting with certain elements when a post has been hidden.
+ * N2. If a post is hidden and if an administrator is interacting with it - increase the opacity to allow ease of readability.
+ * N3. IE11 does renders the rounded feed item actions poorly
+ * N4. Since 'c-feed-item__child' is a kendo list view it forces buttons to use 'box-sizing: content-box' rather than 'box-sizing: border-box'
+ *
+ */
+
+.c-feed{}
+
+.c-feed-list{}
+
+.c-feed-list__action-section{}
+.c-feed-list__action-section--header{}
+.c-feed-list__action-section--footer{}
+
+.c-feed-list__action{}
+.c-feed-list__action--toggle{}
+.c-feed-list__action--toggle.is-selected{}
+.c-feed-list__action--toggle-global{}
+.c-feed-list__action--toggle-department{}
+.c-feed-list__action--toggle-personal{}
+.c-feed-list__action--toggle-overflow{}
+.c-feed-list__action--toggle-overflow-item{}
+.c-feed-list__action--toggle-bookmarks{}
+.c-feed-list__action--load-more{}
+
+.c-feed-list__title{}
+
+.c-feed-item{}
+.c-feed-item .is-subdued:hover{/* N2 */ opacity:0.8; cursor:help;}
+
+.c-feed-item__header{display:none;}
+.c-feed-item__header--parent{}
+.c-feed-item__header--child{}
+.c-feed-item.is-hidden .c-feed-item__header--parent, .c-feed-item__child.is-hidden .c-feed-item__header--child{display:block;}
+
+.c-feed-item__body{}
+.c-feed-item__body--parent{}
+.c-feed-item__body--child{}
+
+.c-feed-item__parent{}
+.c-feed-item__children{}
+.c-feed-item__child{}
+.c-feed-item__child button{ box-sizing: border-box /* N4*/; }
+.c-feed-item__grandchildren{}
+.c-feed-item__grandchild{}
+
+.c-feed-item__avatar{}
+.c-feed-item__avatar--parent{}
+.c-feed-item__avatar--child{}
+.c-feed-item__avatar--grandchild{}
+
+.c-feed-item__content{}
+.c-feed-item__content--parent{}
+.c-feed-item__content--child{}
+.c-feed-item__content--grandchild{}
+
+.c-feed-item__content--has-badge{}
+
+.c-feed-item__content-badge{}
+
+.c-feed-item__content-author{}
+.c-feed-item__content-author--parent{}
+.c-feed-item__content-author--child{}
+.c-feed-item__content-author--grandchild{}
+
+.c-feed-item__content-segment{}
+.c-feed-item__content-segment--parent{}
+.c-feed-item__content-segment--child{max-height:100px;}
+
+.js-truncated-fix.c-feed-item__content-segment--child{ max-height: none; /* Prototype Only*/}
+@media only screen and (max-width: 64em) {
+    .c-feed-item__content-segment--child.is-truncated{ max-height: none; }
+}
+.c-feed-item__content-segment--child.opened{max-height:none;}
+
+.c-feed-item__content-segment--child .show-more-toggle .close,
+.c-feed-item__content-segment--child.opened .show-more-toggle .open{display: none;}
+.c-feed-item__content-segment--child .show-more-toggle .opened, .c-feed-item__content-segment--child.opened .show-more-toggle .close{display: inline;}
+
+.c-feed-item__content-segment--grandchild{}
+
+.c-feed-item__content-attachment{}
+.c-feed-item__content-attachment--parent{}
+.c-feed-item__content-attachment--child{}
+.c-feed-item__content-attachment--grandchild{}
+
+.c-feed-item__content-attachment--image{}
+.c-feed-item__content-attachment--poll{}
+.c-feed-item__content-attachment--file{}
+.c-feed-item__content-attachment--link{}
+.c-feed-item__content-attachment--video{}
+
+.c-feed-item__content-meta{}
+.c-feed-item__content-meta--parent{}
+.c-feed-item__content-meta--child{}
+.c-feed-item__content-meta--grandchild{}
+
+.c-feed-item__content-meta--timestamp{font-style:italic;}
+.c-feed-item__content-meta--counter{border-radius:2px;border-color:var(--t-border-alternative-block);}
+.c-feed-item__content-meta--counter::before{top:50%;left:-10px;bottom:50%;margin-top:-5px;border:5px solid transparent; border-right-color:var(--t-border-alternative-block);text-decoration:none;position:absolute;pointer-events:none;content:"";display:inline-block;}
+.c-feed-item__content-meta--react{}
+.c-feed-item__content-meta--comment{outline:none;}
+
+.c-feed-item__content-action-section{}
+.c-feed-item__content-action-section--parent{}
+.c-feed-item__content-action-section--child{}
+.c-feed-item__content-action-section--grandchild{}
+.c-feed-item__content-action-item{}
+.c-feed-item__content-action-item--overflow-is-open{}
+
+.c-feed-item__content-action{border-radius:50%;border-width:2px; transition: all 0.5s;vertical-align:middle;}
+.c-feed-item__content-action:active:hover{outline:none;}
+.c-feed-item__content-action--parent{}
+.c-feed-item__content-action--child{}
+.c-feed-item__content-action--grandchild{}
+
+.c-feed-item__content-action--react{}
+.c-feed-item__content-action--comment{}
+.k-ie11 .c-feed-item__content-action--comment, .k-ie11 .c-feed-item__content-action--react{ width: 2rem /* N3 */; height: 1.85rem /* N3*/;}
+.c-feed-item__content-action--overflow{border-radius:0;border-width:1px;}
+.c-feed-item__content-action-item--overflow-is-open .c-feed-item__content-action--overflow{border-color:var(--t-border-content-block) var(--t-border-content-block) #fff;z-index:20;}
+.c-feed-item__content-action--overflow-section{margin-top:-1px;z-index:10;}
+.c-feed-item__content-action--overflow-item{}
+.c-feed-item__content-action--hide{}
+.c-feed-item__content-action--unhide{}
+.c-feed-item__content-action--flag{}
+.c-feed-item__content-action--bookmark{}
+
+/* In the event a top level feed item is hidden */
+    .c-feed-item.is-hidden .c-feed-item__content-action--react,.c-feed-item.is-hidden .c-feed-item__content-action--comment,.c-feed-item.is-hidden .c-feed-item__content-action--overflow.c-feed-item__content-action--parent { position:relative; z-index:-1 /* N1 */; }
+/* End 'In the event a top level feed item is hidden' styles */
+
+/* In the event a child level feed item is hidden */
+    .c-feed-item__child.is-hidden .c-feed-item__content-action--overflow.c-feed-item__content-action--child { position:relative; z-index:-1 /* N1 */;}
+/* End 'In the event a top level feed item is hidden' styles */
+
+.c-feed-item__comment-action-section{}
+.c-feed-item__comment-action-item{}
+
+.c-feed-item__comment-action{}
+.c-feed-item__comment-action--pseudo-input{}
+.c-feed-item__comment-action--input{min-height:60px;}
+.c-feed-item__comment-action--submit{}

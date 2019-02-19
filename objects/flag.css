@@ -1,0 +1,54 @@
+﻿/**
+ * Flag Object Pattern
+ * http://csswizardry.com/2013/05/the-flag-object/
+ *
+ * The flag object is similar to the media object, however it has the ability to vertically align the image and the text
+ *
+ * Position Modifier(s):
+ * .o-flag--reverse     - Modifies the image location (right instead of left). Extends '.o-flag' and can be combined with any of the 'Alignment Modifiers'.
+ *
+ * Alignment Modifier(s):
+ * .o-flag--top         - Modifies the alignment of the flag object to align towards the top. Extends '.o-flag'.
+ * .o-flag--bottom      - Modifies the alignment of the flag object to align towards the bottom. Extends '.o-flag'.
+ *
+ * Width Modifier(s):
+ * .o-flag--collapse    - Modifies the width of the body within the flag and the flag object's width to 'auto'. Extends '.o-flag'.
+ *
+ * Example Usage:
+ * <div class="o-flag">
+ *     <div class="o-flag__image">
+ *         <img src="http://example.com/images/example.png" alt="" />
+ *      </div>
+ *      <div class="o-flag__body">
+ *      </div>
+ * </div>
+ *
+ */
+
+.o-flag { display: table; width: 100%; }
+
+    .o-flag__image,
+    .o-flag__body { display: table-cell; vertical-align: middle; }
+
+    .o-flag__image { padding-right: var(--t-gutter); }
+        .o-flag__image > img, .o-flag__image > svg { display: block; max-width: none; }
+
+    .o-flag__body { width: 100%; }
+
+/* ----- (extends flag) ----- */
+.o-flag--reverse .o-flag__image { padding-right: 0; padding-left: var(--t-gutter); }
+
+.o-flag--top .o-flag__image,
+.o-flag--top .o-flag__body { vertical-align: top; }
+
+.o-flag--bottom .o-flag__image,
+.o-flag--bottom .o-flag__body { vertical-align: bottom; }
+
+.o-flag--tiny .o-flag__image { padding-right: var(--t-gutter--tiny); }
+.o-flag--small .o-flag__image { padding-right: var(--t-gutter--small); }
+.o-flag--medium .o-flag__image { padding-right: var(--t-gutter--medium); }
+.o-flag--large .o-flag__image { padding-right: var(--t-gutter--large); }
+.o-flag--huge .o-flag__image { padding-right: var(--t-gutter--huge); }
+
+.o-flag--collapse,.o-flag--collapse .o-flag__body{width:auto;}
+

@@ -1,0 +1,31 @@
+﻿/**
+ * Catalog Component
+ *
+ * Notes:
+ * N1.
+ *
+ */
+.c-catalog {}
+
+.c-catalog-list{}
+
+.c-catalog-item{}
+.c-catalog-item__details{}
+.c-catalog-item__details-title{}
+.c-catalog-item__{ }
+
+/*TODO: Don't apply heights on lazyload images*/
+/*.lazyload,.lazyloading,.lazyloaded{height:150px;width:150px;}*/
+
+.lazyload {background: var(--t-background-stencil);}
+
+    .blur-up.lazyloading {
+        -webkit-filter: blur(5px);
+        filter: blur(5px);
+        transition: filter 400ms, -webkit-filter 400ms;
+    }
+
+    .blur-up.lazyloaded {
+        -webkit-filter: blur(0);
+        filter: blur(0);
+    }

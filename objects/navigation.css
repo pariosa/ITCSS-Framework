@@ -1,0 +1,64 @@
+﻿/**
+ * Navigation Abstraction
+ * http://csswizardry.com/2011/09/the-nav-abstraction/
+ *
+ * Shared patterns that can be used for navigation, breadcrumbs, etc.
+ * 1. Micro clearfix (Grouped in Clearfix-styles), as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+ *
+ * Orientation Modifier(s):
+ * .o-navigation--stacked             - Modifies the display of the navigation list to 'display:block' to make the list vertical. Extends '.navigation'.
+ *
+ * Styling Modifiers(s):
+ * .o-navigation--keywords            - Modifies navigation to appear like a comma delimited list. Extends '.navigation' and should not be used with the 'Orientation Modifiers' or with 'breadcrumbs'
+ * .o-breadcrumb                      - Simple breadcrumb styling to apply to (ordered) lists. Extends '.navigation' and should not be used with the 'Orientation Modifiers'
+ * .o-breadcrumb--path                - Path like structure for example in a file system or folder structure. Extends '.breadcrumb' and should not be used with the 'Orientation Modifiers'
+ *
+ * Example Usage:
+ * <ul class="o-navigation">
+ *     <li>Crab</li>
+ *     <li>Snail</li>
+ *     <li>Monkey</li>
+ *     <li>Snake</li>
+ *     <li>Cat</li>
+ * </ul>
+ *
+ * <ul class="o-navigation o-breadcrumb">
+ *     <li>Crab</li>
+ *     <li data-breadcrumb="|">Snail</li>
+ *     <li data-breadcrumb="|">Monkey</li>
+ *     <li data-breadcrumb="|">Snake</li>
+ *     <li data-breadcrumb="|" class="current">Cat</li>
+ * </ul>
+ */
+
+.o-navigation { list-style: none; padding-left: 0; }
+
+    /* .o-navigation:after { display: table; clear: both; content: ''; } */ /* 1 */
+
+    .o-navigation > li,
+    .o-navigation > li > a { display: inline-block; }
+
+/* ----- (extends navigation) ----- */
+.o-navigation--keywords > li:after { content: "\002C" "\00A0"; }
+.o-navigation--keywords > li:last-child:after { display: none; }
+
+
+/* ----- (extends navigation orientation) ----- */
+.o-navigation--stacked > li { display: list-item; }
+    .o-navigation--stacked > li > a { display: block; }
+
+
+/**
+ * Breadcrumbs (extends navigation)
+ * 1b. Denote the root of the tree.
+ * 2b. Assigns a delimiter on the fly through a data attribute
+ */
+
+.o-breadcrumb > li + li:before { content: "\00BB" "\00A0"; }
+.o-breadcrumb .root { font-weight: bold /* 1b */; }
+
+
+/* ----- (extends breadcrumb) ----- */
+.o-breadcrumb--path > li + li:before { content: "\002F" "\00A0"; }
+
+.o-breadcrumb > li + li[data-breadcrumb]:before { content: attr(data-breadcrumb) "\00A0" /* 2b */; }

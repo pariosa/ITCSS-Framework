@@ -1,0 +1,52 @@
+﻿/**
+ * Layout
+ */
+
+.l-global-container{
+    min-height:100%;
+    height:auto;
+}
+
+.l-global-header-container{
+    background:var(--t-background-main-header);
+    margin:0 auto;
+    z-index:100;
+}
+
+.l-global-header-inner{
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.l-global-header{ padding: var(--t-gutter--small); }
+
+.l-global-content-container{
+    margin:0 auto;
+    padding: var(--t-gutter--small);
+    padding-bottom:80px /*Height of the footer to adjust with placement & scrolling at different screen sizes */;
+    padding-top:80px /*Height of the header to adjust with placement & scrolling at different screen sizes */;
+}
+
+
+@media only screen and (min-width: 64em) {
+    .l-global-content-container { padding-top: 115px; }
+}
+
+.l-global-content-inner{
+    max-width:1200px;
+    margin:0 auto;
+}
+.l-global-content{}
+
+.l-global-footer-container{
+    background:var(--t-background-footer);
+    color:var(--t-color-footer-text);
+    padding:var(--t-gutter);
+    bottom:0;
+}
+
+.l-global-footer-inner{
+    max-width:1200px;
+    margin:0 auto;
+}
+.l-global-footer{}

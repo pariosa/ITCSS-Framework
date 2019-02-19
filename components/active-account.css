@@ -1,0 +1,15 @@
+﻿/**
+ * Active Account Component
+ *
+ */
+
+.c-active-account{}
+.c-active-account__inner{}
+.c-active-account__greeting{}
+.c-active-account__details{}
+.c-active-account__profile-name{line-height:1;}
+.c-active-account__profile-avatar{}
+.c-active-account__points-bank-listing{line-height:1.25;}
+.c-active-account__points-bank-item{}
+.c-active-account__points-bank-item--personal{}
+.c-active-account__points-bank-item--distribute{}

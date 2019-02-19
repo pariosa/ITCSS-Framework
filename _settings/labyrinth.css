@@ -1,0 +1,99 @@
+﻿/**
+ * IMPORTANT! You have only yourself to blame for not reading this message.
+ *
+ * Only use theme-prefix properties within your CSS.
+ * Adjust the base custom properties and variables values only and then update the t-prefix custom properties to use the base custom properties.
+ * The build process will then take care of the rest updating the t-prefix custom properties with the variables values you would expect.
+ */
+
+:root {
+
+    /**
+     * Base Custom Properties
+     */
+
+     --clear-glass: transparent;
+     --pure-white: #fff;
+     --labyrinth-blue: #1C4E97;
+     --lavareef-orange: #f15d22;
+     --emerald-green: #70ad47;
+     --red-orange: #ff4136;
+     --gallery-white: #eee;
+     --ghost-gray: #cccccd;
+     --nobel-gray: #999;
+     --ignite-gray: #646569;
+     --highlight-yellow: #FFD100;
+     --tsundere-gray: #444;
+     --jet-black: #222;
+     --default-link: #194C97;
+
+     --initial-rem-unit: 1rem;
+     --initial-gutter-unit: var(--initial-rem-unit);
+
+     --initial-font-family:"Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+
+
+    /**
+     * Theme Custom Properties - Only adjust the variables values to use the base custom properties from above.
+     * Do not add more theme custom properties unless it has been added for every other custom theme setting.
+     */
+
+    /* ----- Spacing ----- */
+     --t-gutter--diminutive: calc(var(--initial-gutter-unit) * 0.125);
+     --t-gutter--tiny: calc(var(--initial-gutter-unit) * 0.25);
+     --t-gutter--small: calc(var(--initial-gutter-unit) * 0.5);
+     --t-gutter--medium: calc(var(--initial-gutter-unit) * 0.75);
+     --t-gutter: var(--initial-gutter-unit);
+     --t-gutter--large: calc(var(--initial-gutter-unit) * 1.5);
+     --t-gutter--huge: calc(var(--initial-gutter-unit) * 2);
+     --t-gutter--gargantuan: calc(var(--initial-gutter-unit) * 3);
+     --t-gutter--colossal: calc(var(--initial-gutter-unit) * 4);
+
+    /* ----- Fonts -----*/
+    --t-font-stack-content: var(--initial-font-family);
+
+    --t-size-body-copy: calc(var(--initial-rem-unit) * 0.875);
+
+    /* ----- Colors (Border) ----- */
+     --t-border-content-block: var(--ghost-gray);
+     --t-border-alternative-block: var(--ignite-gray);
+     --t-border-subcontent-block: var(--gallery-white);
+     --t-border-invalid: var(--red-orange);
+
+    /* ----- Colors (Text) ----- */
+     --t-color-hyperlink: var(--default-link);
+     --t-color-content-text:var(--jet-black);
+     --t-color-content-text--primary: var(--labyrinth-blue);
+     --t-color-content-text--secondary: var(--tsundere-gray);
+     --t-color-content-text--tertiary: var(--nobel-gray);
+     --t-color-content-text--success: var(--emerald-green);
+     --t-color-content-text--failure: var(--red-orange);
+     --t-color-alternative-block-text: var(--pure-white);
+     --t-color-footer-text: var(--pure-white);
+
+    /* ----- Colors (Background) ----- */
+     --t-background-body: var(--gallery-white);
+     --t-background-main-header: var(--pure-white);
+     --t-background-content-block: var(--pure-white);
+     --t-background-transparent: var(--clear-glass);
+
+     --t-background-stencil: var(--gallery-white);
+     --t-background-stencil--loading: var(--pure-white);
+
+     --t-background-subcontent-block: var(--gallery-white);
+     --t-background-subcontent-secondary-block:color(var(--gallery-white) blackness(10%));
+
+     --t-background-alternative-block: var(--ignite-gray);
+     --t-background-alternative-secondary-block: var(--labyrinth-blue);
+     --t-background-highlight: var(--highlight-yellow);
+     --t-background-footer: var(--labyrinth-blue);
+
+     /* ----- Colors (SVG) ----- */
+     --t-svg-default: var(--pure-white);
+     --t-svg-primary: var(--lavareef-orange);
+     --t-svg-secondary: var(--ghost-gray);
+
+     --t-svg-success: var(--emerald-green);
+     --t-svg-alert: var(--lavareef-orange);
+     --t-svg-failure: var(--red-orange);
+}

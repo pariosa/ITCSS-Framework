@@ -1,0 +1,19 @@
+﻿/**
+ * Pseudo upload button styling
+ * N1. Support: Chrome 48+
+ *    Details: Border is still present at certain screen sizes with a width of 0, a border of 0, a transparent background and positioned to the left of 0
+ *    Fix: Setting left to -1px fixes the issue.
+ * N2. Style pseudo upload as needed, should be a span or div - do not use a button or anchor
+ * N3. Support: Chrome 49+
+ *    Details: Unable to style inline elements (For example:<span class="c-pseudo-upload">) with a hover due to z-indexing issue.
+ *
+ * Example Usage:
+ * <label class="c-pseudo-upload-wrapper">
+ *     <span class="c-pseudo-upload">Upload</span>
+ *     <input id="files" type="file" class="c-pseudo-upload-input" />
+ * </label>
+ */
+
+.c-pseudo-upload-wrapper{ position: relative; overflow: hidden;display: inline-table; }
+.c-pseudo-upload{/* N2 */}
+.c-pseudo-upload-wrapper .c-pseudo-upload-input{ position: absolute; width: 0; background: transparent; outline: none; border: 0; left:-1px/* N1 */; z-index:-1 /* N3 */; }

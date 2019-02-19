@@ -1,0 +1,302 @@
+﻿/**
+ * Deprecated CSS
+ *
+ * As a project grows so does the people who touch it and as the length of the project life increases so does the possibility of legacy code.
+ * Sometimes a project is lucky enough to be rewritten, however that doesn't always mean that all of the code will be cleaned up.
+ * There are times when a view might of had markup copied from a previous layout or perhaps some of the markup is coming from a database and
+ * it wasn't caught during the first rewrite.
+ *
+ * The purpose of Deprecated CSS allows you to either move those styles into a more global location and either keep the previous styles so it
+ * doesn't break the project - or do also include a sort of message that it's deprecated to the developer and allow it to be caught in a QA phase
+ * via the usage of a Scope class. However since deprecated styles could exist anywhere within the structure of a project, it's up to the developer
+ * to decide if it should be within a scope folder or a utility folder or anywhere else in the project.
+ *
+ */
+
+/* Setting the Deprecated CSS as a scope can be useful to avoid messages from appearing in production if the project is far enough along in development */
+
+.s-deprecated { }
+
+.grid:after,
+.grid-column:after,
+.l-grid-column:after,
+.one-whole:after,
+.one-half:after,
+.two-quarters:after,
+.three-sixths:after,
+.four-eighths:after,
+.five-tenths:after,
+.six-twelfths:after,
+.one-third:after,
+.two-sixths:after,
+.three-ninths:after,
+.four-twelfths:after,
+.two-thirds:after,
+.four-sixths:after,
+.six-ninths:after,
+.eight-twelfths:after,
+.one-quarter:after,
+.two-eighths:after,
+.three-twelfths:after,
+.three-quarters:after,
+.six-eighths:after,
+.nine-twelfths:after,
+.one-fifth:after,
+.two-tenths:after,
+.two-fifths:after,
+.four-tenths:after,
+.three-fifths:after,
+.six-tenths:after,
+.four-fifths:after,
+.eight-tenths:after,
+.one-sixth:after,
+.two-twelfths:after,
+.five-sixths:after,
+.ten-twelfths:after,
+.one-seventh:after,
+.two-sevenths:after,
+.three-sevenths:after,
+.four-sevenths:after,
+.five-sevenths:after,
+.six-sevenths:after,
+.one-eighth:after,
+.three-eighths:after,
+.five-eighths:after,
+.seven-eighths:after,
+.one-ninth:after,
+.two-ninths:after,
+.four-ninths:after,
+.five-ninths:after,
+.seven-ninths:after,
+.eight-ninths:after,
+.one-tenth:after,
+.three-tenths:after,
+.seven-tenths:after,
+.nine-tenths:after,
+.one-eleventh:after,
+.two-elevenths:after,
+.three-elevenths:after,
+.four-elevenths:after,
+.five-elevenths:after,
+.six-elevenths:after,
+.seven-elevenths:after,
+.eight-elevenths:after,
+.nine-elevenths:after,
+.ten-elevenths:after,
+.one-twelfth:after,
+.five-twelfths:after,
+.seven-twelfths:after,
+.eleven-twelfths:after,
+.tablet-landscape--one-half:after,
+.tablet-landscape--one-third:after,
+.hide--phone-landscape-up:after,
+.hide--phone-landscape-only:after,
+.hide--tablet-portrait-up:after,
+.hide--tablet-portrait-only:after,
+.hide--tablet-landscape-up:after,
+.hide--tablet-landscape-only:after,
+.hide--desktop-up:after,
+.text-input:after{
+  border: 1px solid #000;
+  color: #000;
+  display: block;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.3em;
+  padding: .1em .3em;
+  position: absolute;
+  text-decoration: none;
+  text-transform: none;
+  z-index: 99999;
+  background: #F88;
+  content: "ERROR: This class is deprecated and should be removed.";
+}
+
+.text-left:after,
+.text-right:after,
+.text-center:after ,
+.pull-left:after,
+.pull-right:after,
+.force-block:after,
+.force-inline-block:after,
+.force-inline:after,
+.visually-hidden:after,
+.visually-hidden.focusable:after,
+.invisible:after,
+.strip-margin:after,
+.strip-border:after,
+.all-caps:after,
+.utility-aside-top:after,
+.utility-aside-bottom:after,
+.utility-aside-left:after,
+.utility-aside-right:after,
+.utility-align-vertical-center:after,
+.utility--full-width:after,
+.utility-overflow-auto:after,
+.utility-overflow-y-auto:after ,
+.utility-clickable:after,
+.utility-text-nowrap:after,
+.ellipsis:after,
+.utility-position-absolute:after,
+.utility-position-absolute-center:after,
+.utility-position-fixed:after,
+.utility-position-relative:after ,
+.utility-position-static:after,
+[class^="utility-"]:after,
+[class*="utility-"]:after,
+[class^="theme-"]:after,
+[class*="theme-"]:after
+ {
+  border: 1px solid #000;
+  color: #000;
+  display: block;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.3em;
+  padding: .1em .3em;
+  position: absolute;
+  text-decoration: none;
+  text-transform: none;
+  z-index: 99999;
+  background: #FF8;
+  content: "ERROR: This class is using deprecated and most likely has a possible workaround that includes a proper namespace.";
+}
+
+.hidden:after{  border: 1px solid #000;
+  color: #000;
+  display: block;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.3em;
+  padding: .1em .3em;
+  position: absolute;
+  text-decoration: none;
+  text-transform: none;
+  z-index: 99999;
+  background: #FF8;
+  content: "ERROR: This class is using deprecated. You should use '.u-hidden' instead";}
+
+/**
+ * Support: Development
+ * Details: ':before' & ':after' are applied inside a container however does not apply to self-closing elements such as an 'input'
+ * Fix: Set an outrageous outline on the elements to call attention to it.
+*/
+
+.grid,
+.grid-column,
+.l-grid-column,
+.one-whole,
+.one-half,
+.two-quarters,
+.three-sixths,
+.four-eighths,
+.five-tenths,
+.six-twelfths,
+.one-third,
+.two-sixths,
+.three-ninths,
+.four-twelfths,
+.two-thirds,
+.four-sixths,
+.six-ninths,
+.eight-twelfths,
+.one-quarter,
+.two-eighths,
+.three-twelfths,
+.three-quarters,
+.six-eighths,
+.nine-twelfths,
+.one-fifth,
+.two-tenths,
+.two-fifths,
+.four-tenths,
+.three-fifths,
+.six-tenths,
+.four-fifths,
+.eight-tenths,
+.one-sixth,
+.two-twelfths,
+.five-sixths,
+.ten-twelfths,
+.one-seventh,
+.two-sevenths,
+.three-sevenths,
+.four-sevenths,
+.five-sevenths,
+.six-sevenths,
+.one-eighth,
+.three-eighths,
+.five-eighths,
+.seven-eighths,
+.one-ninth,
+.two-ninths,
+.four-ninths,
+.five-ninths,
+.seven-ninths,
+.eight-ninths,
+.one-tenth,
+.three-tenths,
+.seven-tenths,
+.nine-tenths,
+.one-eleventh,
+.two-elevenths,
+.three-elevenths,
+.four-elevenths,
+.five-elevenths,
+.six-elevenths,
+.seven-elevenths,
+.eight-elevenths,
+.nine-elevenths,
+.ten-elevenths,
+.one-twelfth,
+.five-twelfths,
+.seven-twelfths,
+.eleven-twelfths,
+.tablet-landscape--one-half,
+.tablet-landscape--one-third,
+.hide--phone-landscape-up,
+.hide--phone-landscape-only,
+.hide--tablet-portrait-up,
+.hide--tablet-portrait-only,
+.hide--tablet-landscape-up,
+.hide--tablet-landscape-only,
+.hide--desktop-up,
+.text-input,
+.text-left,
+.text-right,
+.text-center ,
+.pull-left,
+.pull-right,
+.force-block,
+.force-inline-block,
+.force-inline,
+.visually-hidden,
+.visually-hidden.focusable,
+.invisible,
+.strip-margin,
+.strip-border,
+.all-caps,
+.utility-aside-top,
+.utility-aside-bottom,
+.utility-aside-left,
+.utility-aside-right,
+.utility-align-vertical-center,
+.utility--full-width,
+.utility-overflow-auto,
+.utility-overflow-y-auto ,
+.utility-clickable,
+.utility-text-nowrap,
+.ellipsis,
+.utility-position-absolute,
+.utility-position-absolute-center,
+.utility-position-fixed,
+.utility-position-relative,
+.utility-position-static,
+.hidden,
+[class^="utility-"],
+[class*="utility-"],
+[class^="theme-"],
+[class*="theme-"]{outline:10px solid red;}

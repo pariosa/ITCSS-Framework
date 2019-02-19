@@ -1,0 +1,73 @@
+﻿/**
+ * Primary Navigation Component
+ * N1. Support: Chrome 52+
+ *    Details: Mysterious 1x line appears at bottom of navigation toolbar.
+ *    Fix: Setting margin-bottom to -1px fixes the issue.
+ *    Note: It appears that this is no longer an issue after the text logout link was changed.
+ *    TODO: Confirm that the note above is true and if it's true - then delete the commented out code and this support block.
+ *
+ */
+
+.c-primary-navigation{}
+.c-primary-navigation--header{}
+.c-primary-navigation--mobile{}
+
+@media only screen and (min-width: 64em) {
+    /* Hide Menu so it doesn't flash on desktop view on load*/
+    .c-primary-navigation--mobile{ display:none; }
+}
+
+.c-primary-navigation--header .c-primary-navigation__inner{position:fixed; top:0; right:-100%; width:85%; backface-visibility:hidden; }
+
+.c-primary-navigation__inner{}
+.c-primary-navigation__inner.u-position-fixed{ top:118px; }
+
+.c-primary-navigation__wrapper {}
+
+.c-primary-navigation__mobile-menu{}
+.c-primary-navigation__mobile-menu--hamburger{ position: relative; display: inline-block; width: 25px; height: 25px; }
+.c-primary-navigation__mobile-menu--icon{ margin: 0 auto; position: relative; top: 12px; -webkit-transition-duration: 0s; transition-duration: 0s; -webkit-transition-delay: 0.2s; transition-delay: 0.2s; }
+.c-primary-navigation__mobile-menu--icon{ background-color: currentColor; -webkit-transition-delay: 0.2s; transition-delay: 0.2s; }
+
+.c-primary-navigation__mobile-menu--icon:before,.c-primary-navigation__mobile-menu--icon:after{ position: absolute; content: ''; }
+.c-primary-navigation__mobile-menu--icon, .c-primary-navigation__mobile-menu--icon:before, .c-primary-navigation__mobile-menu--icon:after{ width: 30px; height: 6px; background-color: currentColor; display: block; }
+
+.c-primary-navigation__mobile-menu--icon:before{ -webkit-transform: rotate(0deg); transform: rotate(0deg); -webkit-transition-delay: 0s, 0.2s; transition-delay: 0s, 0.2s; }
+.c-primary-navigation__mobile-menu--icon:before { margin-top: -12px; -webkit-transition-property: margin, -webkit-transform; transition-property: margin, transform; -webkit-transition-duration: 0.2s; transition-duration: 0.2s; -webkit-transition-delay: 0.2s, 0s; transition-delay: 0.2s, 0s; }
+
+.c-primary-navigation__mobile-menu--icon:after{ -webkit-transform: rotate(0deg); transform: rotate(0deg); -webkit-transition-delay: 0s, 0.2s; transition-delay: 0s, 0.2s; }
+.c-primary-navigation__mobile-menu--icon:after{ margin-top: 12px; -webkit-transition-property: margin, -webkit-transform; transition-property: margin, transform; -webkit-transition-duration: 0.2s; transition-duration: 0.2s; -webkit-transition-delay: 0.2s, 0s; transition-delay: 0.2s, 0s; }
+
+.is-active .c-primary-navigation__mobile-menu--icon { -webkit-transition-duration: 0s; transition-duration: 0s; -webkit-transition-delay: 0.2s; transition-delay: 0.2s; }
+.is-active .c-primary-navigation__mobile-menu--icon { background-color: rgba(0,0,0,0.0); -webkit-transition-delay: 0.2s; transition-delay: 0.2s; }
+.is-active .c-primary-navigation__mobile-menu--icon:before { -webkit-transition-property: margin, -webkit-transform; transition-property: margin, transform; -webkit-transition-duration: 0.2s; transition-duration: 0.2s; -webkit-transition-delay: 0.2s, 0s; transition-delay: 0.2s, 0s; }
+.is-active .c-primary-navigation__mobile-menu--icon:before { margin-top: 0; -webkit-transform: rotate(45deg); transform: rotate(45deg); -webkit-transition-delay: 0s, 0.2s; transition-delay: 0s, 0.2s; }
+.is-active .c-primary-navigation__mobile-menu--icon:after { -webkit-transition-property: margin, -webkit-transform; transition-property: margin, transform; -webkit-transition-duration: 0.2s; transition-duration: 0.2s; -webkit-transition-delay: 0.2s, 0s; transition-delay: 0.2s, 0s; }
+.is-active .c-primary-navigation__mobile-menu--icon:after { margin-top: 0;-webkit-transform: rotate(-45deg); transform: rotate(-45deg);-webkit-transition-delay: 0s, 0.2s; transition-delay: 0s, 0.2s; }
+
+
+.c-primary-navigation__label--menu{}
+.c-primary-navigation__label--close{display:none;}
+
+.c-primary-navigation__children{ height:100vh; }
+.c-primary-navigation__child { }
+.c-primary-navigation__child--body{}
+.c-primary-navigation__child--footer{ bottom:1vh; display:none; }
+
+.c-primary-navigation__listing{line-height:0;}
+/* .k-webkit .c-primary-navigation__listing is N1 - Please review at a later date if it's safe to remove once all changes to the menu are complete. */
+/*.k-webkit .c-primary-navigation__listing{margin-bottom: -1px;}*/
+.c-primary-navigation__section{}
+
+.c-primary-navigation__item{}
+.c-primary-navigation__item--parent{}
+.c-primary-navigation__item--children{}
+.c-primary-navigation__item--child{}
+
+.c-primary-navigation__item--notification{ right:0; width:300px; top:1.8rem; }
+.c-primary-navigation__item--logout{ right:0; width:80px; top:1.8rem; }
+.c-primary-navigation__subhead{}
+.c-primary-navigation__link{}
+
+.c-primary-navigation > li + li[data-breadcrumb]:before{}
+.c-primary-navigation a{}

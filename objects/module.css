@@ -1,0 +1,61 @@
+﻿/**
+ * Module Pattern
+ * https://github.com/stubbornella/oocss/wiki/Module
+ *
+ * Modules are based off of the YUI's Module Control
+ * 1. Micro clearfix (Grouped in Clearfix-styles), as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+ * 2. A presentational element which wraps the top/bottom corners. It is used by '.module--complex' to display the upper/lower edge of the block.
+ *    In other block structures it has no height. This empty, non-semantic element should be inserted via a serverside script or JavaScript, the former is preferable.
+ * 3. A presentational element used to display the top left/top right/bottom left/bottom right corner of a block.
+ *    This empty, non-semantic element should be inserted via a serverside script or JavaScript, the former is preferable.
+ *
+ *  Style Modifier(s):
+ * .module--simple      - Used as a basic styling for any container object that doesn't require complex borders or outside transparency'. Extends '.module'.
+ * .module--complex     - Used in cases where you require images that are too complex to be simulated quickly or because of performance issues via pure css. Extends '.module'.
+ * .module--pop         - Used for pop-ups and other containers that need outside transparency. Extends '.module'.
+ *
+ * Example Usage:
+ * <div class="o-module">
+ *     <div class="o-module__inner">
+ *         <div class="o-module__header"></div>
+ *         <div class="o-module__body"></div>
+ *         <div class="o-module__footer"></div>
+ *     </div>
+ * </div>
+ *
+ * <div class="o-module o-module--complex">
+ *     <b class="top"><b class="top-left"></b><b class="top-right"></b></b>
+ *     <div class="o-module__inner">
+ *         <div class="o-module__header"></div>
+ *         <div class="o-module__body"></div>
+ *         <div class="o-module__footer"></div>
+ *     </div>
+ *     <b class="bottom"><b class="bottom-left"></b><b class="bottom-right"></b></b>
+ * </div>
+ *
+ */
+
+.o-module { display: block; margin: .8rem; }
+
+    /* .o-module:after { display: table; clear: both; content: ''; } */ /* 1 */
+
+    .o-module__inner { position: relative; }
+
+    .o-module__header,
+    .o-module__body,
+    .o-module__footer { display: block; overflow: hidden; }
+
+
+/* ----- (extends module) ----- */
+.o-module--simple { }
+.o-module--complex { }
+.o-module--pop { }
+
+
+/* ----- (presentational element which '.module--complex' uses) ----- */
+.o-module--complex .top { /* 2 */ }
+.o-module--complex .top-left { /* 3 */ }
+.o-module--complex .top-right { /* 3 */ }
+.o-module--complex .bottom { /* 2 */ }
+.o-module--complex .bottom-left { /* 3 */ }
+.o-module--complex .bottom-right { /* 3 */ }

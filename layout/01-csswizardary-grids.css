@@ -1,0 +1,1251 @@
+﻿/**
+ * Custom Build from of csswizardry grids
+ */
+
+/**
+ * 1. Allow the grid system to be used on lists.
+ * 2. Remove any margins and paddings that might affect the grid system.
+ * 3. Apply a negative `margin-left` to negate the columns’ gutters.
+ */
+.l-grid {
+  list-style: none;
+  /* [1] */
+  margin: 0;
+  /* [2] */
+  padding: 0;
+  /* [2] */
+  margin-left: -24px;
+  /* [3] */
+  letter-spacing: -0.31em;
+}
+
+/* Opera hack */
+.opera:-o-prefocus,
+.l-grid {
+  word-spacing: -0.43em;
+}
+
+/**
+ * CSSWizardary Grids Hack Fix
+ * 1. Handle letter-spacing hack within csswizardary-grids
+ * 2. Handle word-spacing hack for Opera within csswizardary-grids
+ */
+.l-grid > * {
+  letter-spacing: 0 /* 1 */;
+  word-spacing: 0 /* 2 */;
+}
+
+/**
+ * 1. Cause columns to stack side-by-side.
+ * 2. Space columns apart.
+ * 3. Align columns to the tops of each other.
+ * 4. Full-width unless told to behave otherwise.
+ * 5. Required to combine fluid widths and fixed gutters.
+ */
+.l-grid__column {
+  display: inline-block;
+  /* [1] */
+  padding-left: 24px;
+  /* [2] */
+  vertical-align: top;
+  /* [3] */
+  width: 100%;
+  /* [4] */
+  -webkit-box-sizing: border-box;
+  /* [5] */
+  -moz-box-sizing: border-box;
+  /* [5] */
+  box-sizing: border-box;
+  /* [5] */
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+
+/**
+ * Reversed grids allow you to structure your source in the opposite order to
+ * how your rendered layout will appear. Extends `.grid`.
+ */
+.l-grid--reverse {
+  direction: rtl;
+  text-align: left;
+}
+.l-grid--reverse > .l-grid__column {
+  direction: ltr;
+  text-align: left;
+}
+
+/**
+ * Gutterless grids have all the properties of regular grids, minus any spacing.
+ * Extends `.grid`.
+ */
+.l-grid--full {
+  margin-left: 0;
+}
+.l-grid--full > .l-grid__column {
+  padding-left: 0;
+}
+
+/**
+ * Align the entire grid to the right. Extends `.grid`.
+ */
+.l-grid--right {
+  text-align: right;
+}
+.l-grid--right > .l-grid__column {
+  text-align: left;
+}
+
+/**
+ * Centered grids align grid items centrally without needing to use push or pull
+ * classes. Extends `.grid`.
+ */
+.l-grid--center {
+  text-align: center;
+}
+.l-grid--center > .l-grid__column {
+  text-align: left;
+}
+
+/**
+ * Align grid cells vertically (`.grid--middle` or `.grid--bottom`). Extends
+ * `.grid`.
+ */
+.l-grid--middle > .l-grid__column {
+  vertical-align: middle;
+}
+
+.l-grid--bottom > .l-grid__column {
+  vertical-align: bottom;
+}
+
+/**
+ * Create grids with narrower gutters. Extends `.grid`.
+ */
+.l-grid--narrow {
+  margin-left: -12px;
+}
+.l-grid--narrow > .l-grid__column {
+  padding-left: 12px;
+}
+
+/**
+ * Create grids with wider gutters. Extends `.grid`.
+ */
+.l-grid--wide {
+  margin-left: -48px;
+}
+.l-grid--wide > .l-grid__column {
+  padding-left: 48px;
+}
+
+/**
+ * Our regular, non-responsive width classes.
+ */
+
+/**
+ * Whole
+ */
+.l-one-whole {
+  width: 100%;
+}
+
+/**
+ * Halves
+ */
+.l-one-half, .l-two-quarters, .l-three-sixths, .l-four-eighths, .l-five-tenths, .l-six-twelfths {
+  width: 50%;
+}
+
+/**
+ * Thirds
+ */
+.l-one-third, .l-two-sixths, .l-three-ninths, .l-four-twelfths {
+  width: 33.333%;
+}
+
+.l-two-thirds, .l-four-sixths, .l-six-ninths, .l-eight-twelfths {
+  width: 66.666%;
+}
+
+/**
+ * Quarters
+ */
+.l-one-quarter, .l-two-eighths, .l-three-twelfths {
+  width: 25%;
+}
+
+.l-three-quarters, .l-six-eighths, .l-nine-twelfths {
+  width: 75%;
+}
+
+/**
+ * Fifths
+ */
+.l-one-fifth, .l-two-tenths {
+  width: 20%;
+}
+
+.l-two-fifths, .l-four-tenths {
+  width: 40%;
+}
+
+.l-three-fifths, .l-six-tenths {
+  width: 60%;
+}
+
+.l-four-fifths, .l-eight-tenths {
+  width: 80%;
+}
+
+/**
+ * Sixths
+ */
+.l-one-sixth, .l-two-twelfths {
+  width: 16.666%;
+}
+
+.l-five-sixths, .l-ten-twelfths {
+  width: 83.333%;
+}
+
+/**
+ * Sevenths
+ */
+.l-one-seventh {
+  width: 14.2857%;
+}
+
+.l-two-sevenths {
+  width: 28.5714%;
+}
+
+.l-three-sevenths {
+  width: 42.8571%;
+}
+
+.l-four-sevenths {
+  width: 57.1428%;
+}
+
+.l-five-sevenths {
+  width: 71.4285%;
+}
+
+.l-six-sevenths {
+  width: 85.7142%;
+}
+
+/**
+ * Eighths
+ */
+.l-one-eighth {
+  width: 12.5%;
+}
+
+.l-three-eighths {
+  width: 37.5%;
+}
+
+.l-five-eighths {
+  width: 62.5%;
+}
+
+.l-seven-eighths {
+  width: 87.5%;
+}
+
+/**
+* Ninths
+*/
+.l-one-ninth {
+  width: 11.111%;
+}
+
+.l-two-ninths {
+  width: 22.222%;
+}
+
+.l-four-ninths {
+  width: 44.444%;
+}
+
+.l-five-ninths {
+  width: 55.555%;
+}
+
+.l-seven-ninths {
+  width: 77.777%;
+}
+
+.l-eight-ninths {
+  width: 88.888%;
+}
+
+/**
+ * Tenths
+ */
+.l-one-tenth {
+  width: 10%;
+}
+
+.l-three-tenths {
+  width: 30%;
+}
+
+.l-seven-tenths {
+  width: 70%;
+}
+
+.l-nine-tenths {
+  width: 90%;
+}
+
+/**
+ * Elevenths
+ */
+.l-one-eleventh {
+  width: 9.0909%;
+}
+
+.l-two-elevenths {
+  width: 18.1818%;
+}
+
+.l-three-elevenths {
+  width: 27.2727%;
+}
+
+.l-four-elevenths {
+  width: 36.3636%;
+}
+
+.l-five-elevenths {
+  width: 45.4545%;
+}
+
+.l-six-elevenths {
+  width: 54.5454%;
+}
+
+.l-seven-elevenths {
+  width: 63.6363%;
+}
+
+.l-eight-elevenths {
+  width: 72.7272%;
+}
+
+.l-nine-elevenths {
+  width: 81.8181%;
+}
+
+.l-ten-elevenths {
+  width: 90.9090%;
+}
+
+/**
+ * Twelfths
+ */
+.l-one-twelfth {
+  width: 8.333%;
+}
+
+.l-five-twelfths {
+  width: 41.666%;
+}
+
+.l-seven-twelfths {
+  width: 58.333%;
+}
+
+.l-eleven-twelfths {
+  width: 91.666%;
+}
+
+/**
+ * Our responsive classes, if we have enabled them.
+ */
+@media only screen and (min-width: 30em) {
+  /**
+   * Whole
+   */
+  .l-phone-landscape--one-whole {
+    width: 100%;
+  }
+
+  /**
+   * Halves
+   */
+  .l-phone-landscape--one-half, .l-phone-landscape--two-quarters, .l-phone-landscape--three-sixths, .l-phone-landscape--four-eighths, .l-phone-landscape--five-tenths, .l-phone-landscape--six-twelfths {
+    width: 50%;
+  }
+
+  /**
+   * Thirds
+   */
+  .l-phone-landscape--one-third, .l-phone-landscape--two-sixths, .l-phone-landscape--three-ninths, .l-phone-landscape--four-twelfths {
+    width: 33.333%;
+  }
+
+  .l-phone-landscape--two-thirds, .l-phone-landscape--four-sixths, .l-phone-landscape--six-ninths, .l-phone-landscape--eight-twelfths {
+    width: 66.666%;
+  }
+
+  /**
+   * Quarters
+   */
+  .l-phone-landscape--one-quarter, .l-phone-landscape--two-eighths, .l-phone-landscape--three-twelfths {
+    width: 25%;
+  }
+
+  .l-phone-landscape--three-quarters, .l-phone-landscape--six-eighths, .l-phone-landscape--nine-twelfths {
+    width: 75%;
+  }
+
+  /**
+   * Fifths
+   */
+  .l-phone-landscape--one-fifth, .l-phone-landscape--two-tenths {
+    width: 20%;
+  }
+
+  .l-phone-landscape--two-fifths, .l-phone-landscape--four-tenths {
+    width: 40%;
+  }
+
+  .l-phone-landscape--three-fifths, .l-phone-landscape--six-tenths {
+    width: 60%;
+  }
+
+  .l-phone-landscape--four-fifths, .l-phone-landscape--eight-tenths {
+    width: 80%;
+  }
+
+  /**
+   * Sixths
+   */
+  .l-phone-landscape--one-sixth, .l-phone-landscape--two-twelfths {
+    width: 16.666%;
+  }
+
+  .l-phone-landscape--five-sixths, .l-phone-landscape--ten-twelfths {
+    width: 83.333%;
+  }
+
+  /**
+   * Sevenths
+   */
+  .l-phone-landscape--one-seventh {
+    width: 14.2857%;
+  }
+
+  .l-phone-landscape--two-sevenths {
+    width: 28.5714%;
+  }
+
+  .l-phone-landscape--three-sevenths {
+    width: 42.8571%;
+  }
+
+  .l-phone-landscape--four-sevenths {
+    width: 57.1428%;
+  }
+
+  .l-phone-landscape--five-sevenths {
+    width: 71.4285%;
+  }
+
+  .l-phone-landscape--six-sevenths {
+    width: 85.7142%;
+  }
+
+  /**
+   * Eighths
+   */
+  .l-phone-landscape--one-eighth {
+    width: 12.5%;
+  }
+
+  .l-phone-landscape--three-eighths {
+    width: 37.5%;
+  }
+
+  .l-phone-landscape--five-eighths {
+    width: 62.5%;
+  }
+
+  .l-phone-landscape--seven-eighths {
+    width: 87.5%;
+  }
+
+  /**
+  * Ninths
+  */
+  .l-phone-landscape--one-ninth {
+    width: 11.111%;
+  }
+
+  .l-phone-landscape--two-ninths {
+    width: 22.222%;
+  }
+
+  .l-phone-landscape--four-ninths {
+    width: 44.444%;
+  }
+
+  .l-phone-landscape--five-ninths {
+    width: 55.555%;
+  }
+
+  .l-phone-landscape--seven-ninths {
+    width: 77.777%;
+  }
+
+  .l-phone-landscape--eight-ninths {
+    width: 88.888%;
+  }
+
+  /**
+   * Tenths
+   */
+  .l-phone-landscape--one-tenth {
+    width: 10%;
+  }
+
+  .l-phone-landscape--three-tenths {
+    width: 30%;
+  }
+
+  .l-phone-landscape--seven-tenths {
+    width: 70%;
+  }
+
+  .l-phone-landscape--nine-tenths {
+    width: 90%;
+  }
+
+  /**
+   * Elevenths
+   */
+  .l-phone-landscape--one-eleventh {
+    width: 9.0909%;
+  }
+
+  .l-phone-landscape--two-elevenths {
+    width: 18.1818%;
+  }
+
+  .l-phone-landscape--three-elevenths {
+    width: 27.2727%;
+  }
+
+  .l-phone-landscape--four-elevenths {
+    width: 36.3636%;
+  }
+
+  .l-phone-landscape--five-elevenths {
+    width: 45.4545%;
+  }
+
+  .l-phone-landscape--six-elevenths {
+    width: 54.5454%;
+  }
+
+  .l-phone-landscape--seven-elevenths {
+    width: 63.6363%;
+  }
+
+  .l-phone-landscape--eight-elevenths {
+    width: 72.7272%;
+  }
+
+  .l-phone-landscape--nine-elevenths {
+    width: 81.8181%;
+  }
+
+  .l-phone-landscape--ten-elevenths {
+    width: 90.9090%;
+  }
+
+  /**
+   * Twelfths
+   */
+  .l-phone-landscape--one-twelfth {
+    width: 8.333%;
+  }
+
+  .l-phone-landscape--five-twelfths {
+    width: 41.666%;
+  }
+
+  .l-phone-landscape--seven-twelfths {
+    width: 58.333%;
+  }
+
+  .l-phone-landscape--eleven-twelfths {
+    width: 91.666%;
+  }
+}
+@media only screen and (min-width: 40em) {
+  /**
+   * Whole
+   */
+  .l-tablet-portrait--one-whole {
+    width: 100%;
+  }
+
+  /**
+   * Halves
+   */
+  .l-tablet-portrait--one-half, .l-tablet-portrait--two-quarters, .l-tablet-portrait--three-sixths, .l-tablet-portrait--four-eighths, .l-tablet-portrait--five-tenths, .l-tablet-portrait--six-twelfths {
+    width: 50%;
+  }
+
+  /**
+   * Thirds
+   */
+  .l-tablet-portrait--one-third, .l-tablet-portrait--two-sixths, .l-tablet-portrait--three-ninths, .l-tablet-portrait--four-twelfths {
+    width: 33.333%;
+  }
+
+  .l-tablet-portrait--two-thirds, .l-tablet-portrait--four-sixths, .l-tablet-portrait--six-ninths, .l-tablet-portrait--eight-twelfths {
+    width: 66.666%;
+  }
+
+  /**
+   * Quarters
+   */
+  .l-tablet-portrait--one-quarter, .l-tablet-portrait--two-eighths, .l-tablet-portrait--three-twelfths {
+    width: 25%;
+  }
+
+  .l-tablet-portrait--three-quarters, .l-tablet-portrait--six-eighths, .l-tablet-portrait--nine-twelfths {
+    width: 75%;
+  }
+
+  /**
+   * Fifths
+   */
+  .l-tablet-portrait--one-fifth, .l-tablet-portrait--two-tenths {
+    width: 20%;
+  }
+
+  .l-tablet-portrait--two-fifths, .l-tablet-portrait--four-tenths {
+    width: 40%;
+  }
+
+  .l-tablet-portrait--three-fifths, .l-tablet-portrait--six-tenths {
+    width: 60%;
+  }
+
+  .l-tablet-portrait--four-fifths, .l-tablet-portrait--eight-tenths {
+    width: 80%;
+  }
+
+  /**
+   * Sixths
+   */
+  .l-tablet-portrait--one-sixth, .l-tablet-portrait--two-twelfths {
+    width: 16.666%;
+  }
+
+  .l-tablet-portrait--five-sixths, .l-tablet-portrait--ten-twelfths {
+    width: 83.333%;
+  }
+
+  /**
+   * Sevenths
+   */
+  .l-tablet-portrait--one-seventh {
+    width: 14.2857%;
+  }
+
+  .l-tablet-portrait--two-sevenths {
+    width: 28.5714%;
+  }
+
+  .l-tablet-portrait--three-sevenths {
+    width: 42.8571%;
+  }
+
+  .l-tablet-portrait--four-sevenths {
+    width: 57.1428%;
+  }
+
+  .l-tablet-portrait--five-sevenths {
+    width: 71.4285%;
+  }
+
+  .l-tablet-portrait--six-sevenths {
+    width: 85.7142%;
+  }
+
+  /**
+   * Eighths
+   */
+  .l-tablet-portrait--one-eighth {
+    width: 12.5%;
+  }
+
+  .l-tablet-portrait--three-eighths {
+    width: 37.5%;
+  }
+
+  .l-tablet-portrait--five-eighths {
+    width: 62.5%;
+  }
+
+  .l-tablet-portrait--seven-eighths {
+    width: 87.5%;
+  }
+
+  /**
+  * Ninths
+  */
+  .l-tablet-portrait--one-ninth {
+    width: 11.111%;
+  }
+
+  .l-tablet-portrait--two-ninths {
+    width: 22.222%;
+  }
+
+  .l-tablet-portrait--four-ninths {
+    width: 44.444%;
+  }
+
+  .l-tablet-portrait--five-ninths {
+    width: 55.555%;
+  }
+
+  .l-tablet-portrait--seven-ninths {
+    width: 77.777%;
+  }
+
+  .l-tablet-portrait--eight-ninths {
+    width: 88.888%;
+  }
+
+  /**
+   * Tenths
+   */
+  .l-tablet-portrait--one-tenth {
+    width: 10%;
+  }
+
+  .l-tablet-portrait--three-tenths {
+    width: 30%;
+  }
+
+  .l-tablet-portrait--seven-tenths {
+    width: 70%;
+  }
+
+  .l-tablet-portrait--nine-tenths {
+    width: 90%;
+  }
+
+  /**
+   * Elevenths
+   */
+  .l-tablet-portrait--one-eleventh {
+    width: 9.0909%;
+  }
+
+  .l-tablet-portrait--two-elevenths {
+    width: 18.1818%;
+  }
+
+  .l-tablet-portrait--three-elevenths {
+    width: 27.2727%;
+  }
+
+  .l-tablet-portrait--four-elevenths {
+    width: 36.3636%;
+  }
+
+  .l-tablet-portrait--five-elevenths {
+    width: 45.4545%;
+  }
+
+  .l-tablet-portrait--six-elevenths {
+    width: 54.5454%;
+  }
+
+  .l-tablet-portrait--seven-elevenths {
+    width: 63.6363%;
+  }
+
+  .l-tablet-portrait--eight-elevenths {
+    width: 72.7272%;
+  }
+
+  .l-tablet-portrait--nine-elevenths {
+    width: 81.8181%;
+  }
+
+  .l-tablet-portrait--ten-elevenths {
+    width: 90.9090%;
+  }
+
+  /**
+   * Twelfths
+   */
+  .l-tablet-portrait--one-twelfth {
+    width: 8.333%;
+  }
+
+  .l-tablet-portrait--five-twelfths {
+    width: 41.666%;
+  }
+
+  .l-tablet-portrait--seven-twelfths {
+    width: 58.333%;
+  }
+
+  .l-tablet-portrait--eleven-twelfths {
+    width: 91.666%;
+  }
+}
+@media only screen and (min-width: 64em) {
+  /**
+   * Whole
+   */
+  .l-tablet-landscape--one-whole {
+    width: 100%;
+  }
+
+  /**
+   * Halves
+   */
+  .l-tablet-landscape--one-half, .l-tablet-landscape--two-quarters, .l-tablet-landscape--three-sixths, .l-tablet-landscape--four-eighths, .l-tablet-landscape--five-tenths, .l-tablet-landscape--six-twelfths {
+    width: 50%;
+  }
+
+  /**
+   * Thirds
+   */
+  .l-tablet-landscape--one-third, .l-tablet-landscape--two-sixths, .l-tablet-landscape--three-ninths, .l-tablet-landscape--four-twelfths {
+    width: 33.333%;
+  }
+
+  .l-tablet-landscape--two-thirds, .l-tablet-landscape--four-sixths, .l-tablet-landscape--six-ninths, .l-tablet-landscape--eight-twelfths {
+    width: 66.666%;
+  }
+
+  /**
+   * Quarters
+   */
+  .l-tablet-landscape--one-quarter, .l-tablet-landscape--two-eighths, .l-tablet-landscape--three-twelfths {
+    width: 25%;
+  }
+
+  .l-tablet-landscape--three-quarters, .l-tablet-landscape--six-eighths, .l-tablet-landscape--nine-twelfths {
+    width: 75%;
+  }
+
+  /**
+   * Fifths
+   */
+  .l-tablet-landscape--one-fifth, .l-tablet-landscape--two-tenths {
+    width: 20%;
+  }
+
+  .l-tablet-landscape--two-fifths, .l-tablet-landscape--four-tenths {
+    width: 40%;
+  }
+
+  .l-tablet-landscape--three-fifths, .l-tablet-landscape--six-tenths {
+    width: 60%;
+  }
+
+  .l-tablet-landscape--four-fifths, .l-tablet-landscape--eight-tenths {
+    width: 80%;
+  }
+
+  /**
+   * Sixths
+   */
+  .l-tablet-landscape--one-sixth, .l-tablet-landscape--two-twelfths {
+    width: 16.666%;
+  }
+
+  .l-tablet-landscape--five-sixths, .l-tablet-landscape--ten-twelfths {
+    width: 83.333%;
+  }
+
+  /**
+   * Sevenths
+   */
+  .l-tablet-landscape--one-seventh {
+    width: 14.2857%;
+  }
+
+  .l-tablet-landscape--two-sevenths {
+    width: 28.5714%;
+  }
+
+  .l-tablet-landscape--three-sevenths {
+    width: 42.8571%;
+  }
+
+  .l-tablet-landscape--four-sevenths {
+    width: 57.1428%;
+  }
+
+  .l-tablet-landscape--five-sevenths {
+    width: 71.4285%;
+  }
+
+  .l-tablet-landscape--six-sevenths {
+    width: 85.7142%;
+  }
+
+  /**
+   * Eighths
+   */
+  .l-tablet-landscape--one-eighth {
+    width: 12.5%;
+  }
+
+  .l-tablet-landscape--three-eighths {
+    width: 37.5%;
+  }
+
+  .l-tablet-landscape--five-eighths {
+    width: 62.5%;
+  }
+
+  .l-tablet-landscape--seven-eighths {
+    width: 87.5%;
+  }
+
+  /**
+  * Ninths
+  */
+  .l-tablet-landscape--one-ninth {
+    width: 11.111%;
+  }
+
+  .l-tablet-landscape--two-ninths {
+    width: 22.222%;
+  }
+
+  .l-tablet-landscape--four-ninths {
+    width: 44.444%;
+  }
+
+  .l-tablet-landscape--five-ninths {
+    width: 55.555%;
+  }
+
+  .l-tablet-landscape--seven-ninths {
+    width: 77.777%;
+  }
+
+  .l-tablet-landscape--eight-ninths {
+    width: 88.888%;
+  }
+
+  /**
+   * Tenths
+   */
+  .l-tablet-landscape--one-tenth {
+    width: 10%;
+  }
+
+  .l-tablet-landscape--three-tenths {
+    width: 30%;
+  }
+
+  .l-tablet-landscape--seven-tenths {
+    width: 70%;
+  }
+
+  .l-tablet-landscape--nine-tenths {
+    width: 90%;
+  }
+
+  /**
+   * Elevenths
+   */
+  .l-tablet-landscape--one-eleventh {
+    width: 9.0909%;
+  }
+
+  .l-tablet-landscape--two-elevenths {
+    width: 18.1818%;
+  }
+
+  .l-tablet-landscape--three-elevenths {
+    width: 27.2727%;
+  }
+
+  .l-tablet-landscape--four-elevenths {
+    width: 36.3636%;
+  }
+
+  .l-tablet-landscape--five-elevenths {
+    width: 45.4545%;
+  }
+
+  .l-tablet-landscape--six-elevenths {
+    width: 54.5454%;
+  }
+
+  .l-tablet-landscape--seven-elevenths {
+    width: 63.6363%;
+  }
+
+  .l-tablet-landscape--eight-elevenths {
+    width: 72.7272%;
+  }
+
+  .l-tablet-landscape--nine-elevenths {
+    width: 81.8181%;
+  }
+
+  .l-tablet-landscape--ten-elevenths {
+    width: 90.9090%;
+  }
+
+  /**
+   * Twelfths
+   */
+  .l-tablet-landscape--one-twelfth {
+    width: 8.333%;
+  }
+
+  .l-tablet-landscape--five-twelfths {
+    width: 41.666%;
+  }
+
+  .l-tablet-landscape--seven-twelfths {
+    width: 58.333%;
+  }
+
+  .l-tablet-landscape--eleven-twelfths {
+    width: 91.666%;
+  }
+}
+@media only screen and (min-width: 80em) {
+  /**
+   * Whole
+   */
+  .l-desktop--one-whole {
+    width: 100%;
+  }
+
+  /**
+   * Halves
+   */
+  .l-desktop--one-half, .l-desktop--two-quarters, .l-desktop--three-sixths, .l-desktop--four-eighths, .l-desktop--five-tenths, .l-desktop--six-twelfths {
+    width: 50%;
+  }
+
+  /**
+   * Thirds
+   */
+  .l-desktop--one-third, .l-desktop--two-sixths, .l-desktop--three-ninths, .l-desktop--four-twelfths {
+    width: 33.333%;
+  }
+
+  .l-desktop--two-thirds, .l-desktop--four-sixths, .l-desktop--six-ninths, .l-desktop--eight-twelfths {
+    width: 66.666%;
+  }
+
+  /**
+   * Quarters
+   */
+  .l-desktop--one-quarter, .l-desktop--two-eighths, .l-desktop--three-twelfths {
+    width: 25%;
+  }
+
+  .l-desktop--three-quarters, .l-desktop--six-eighths, .l-desktop--nine-twelfths {
+    width: 75%;
+  }
+
+  /**
+   * Fifths
+   */
+  .l-desktop--one-fifth, .l-desktop--two-tenths {
+    width: 20%;
+  }
+
+  .l-desktop--two-fifths, .l-desktop--four-tenths {
+    width: 40%;
+  }
+
+  .l-desktop--three-fifths, .l-desktop--six-tenths {
+    width: 60%;
+  }
+
+  .l-desktop--four-fifths, .l-desktop--eight-tenths {
+    width: 80%;
+  }
+
+  /**
+   * Sixths
+   */
+  .l-desktop--one-sixth, .l-desktop--two-twelfths {
+    width: 16.666%;
+  }
+
+  .l-desktop--five-sixths, .l-desktop--ten-twelfths {
+    width: 83.333%;
+  }
+
+  /**
+   * Sevenths
+   */
+  .l-desktop--one-seventh {
+    width: 14.2857%;
+  }
+
+  .l-desktop--two-sevenths {
+    width: 28.5714%;
+  }
+
+  .l-desktop--three-sevenths {
+    width: 42.8571%;
+  }
+
+  .l-desktop--four-sevenths {
+    width: 57.1428%;
+  }
+
+  .l-desktop--five-sevenths {
+    width: 71.4285%;
+  }
+
+  .l-desktop--six-sevenths {
+    width: 85.7142%;
+  }
+
+  /**
+   * Eighths
+   */
+  .l-desktop--one-eighth {
+    width: 12.5%;
+  }
+
+  .l-desktop--three-eighths {
+    width: 37.5%;
+  }
+
+  .l-desktop--five-eighths {
+    width: 62.5%;
+  }
+
+  .l-desktop--seven-eighths {
+    width: 87.5%;
+  }
+
+  /**
+  * Ninths
+  */
+  .l-desktop--one-ninth {
+    width: 11.111%;
+  }
+
+  .l-desktop--two-ninths {
+    width: 22.222%;
+  }
+
+  .l-desktop--four-ninths {
+    width: 44.444%;
+  }
+
+  .l-desktop--five-ninths {
+    width: 55.555%;
+  }
+
+  .l-desktop--seven-ninths {
+    width: 77.777%;
+  }
+
+  .l-desktop--eight-ninths {
+    width: 88.888%;
+  }
+
+  /**
+   * Tenths
+   */
+  .l-desktop--one-tenth {
+    width: 10%;
+  }
+
+  .l-desktop--three-tenths {
+    width: 30%;
+  }
+
+  .l-desktop--seven-tenths {
+    width: 70%;
+  }
+
+  .l-desktop--nine-tenths {
+    width: 90%;
+  }
+
+  /**
+   * Elevenths
+   */
+  .l-desktop--one-eleventh {
+    width: 9.0909%;
+  }
+
+  .l-desktop--two-elevenths {
+    width: 18.1818%;
+  }
+
+  .l-desktop--three-elevenths {
+    width: 27.2727%;
+  }
+
+  .l-desktop--four-elevenths {
+    width: 36.3636%;
+  }
+
+  .l-desktop--five-elevenths {
+    width: 45.4545%;
+  }
+
+  .l-desktop--six-elevenths {
+    width: 54.5454%;
+  }
+
+  .l-desktop--seven-elevenths {
+    width: 63.6363%;
+  }
+
+  .l-desktop--eight-elevenths {
+    width: 72.7272%;
+  }
+
+  .l-desktop--nine-elevenths {
+    width: 81.8181%;
+  }
+
+  .l-desktop--ten-elevenths {
+    width: 90.9090%;
+  }
+
+  /**
+   * Twelfths
+   */
+  .l-desktop--one-twelfth {
+    width: 8.333%;
+  }
+
+  .l-desktop--five-twelfths {
+    width: 41.666%;
+  }
+
+  .l-desktop--seven-twelfths {
+    width: 58.333%;
+  }
+
+  .l-desktop--eleven-twelfths {
+    width: 91.666%;
+  }
+}

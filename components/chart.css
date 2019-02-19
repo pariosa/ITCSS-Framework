@@ -1,0 +1,16 @@
+﻿/**
+ * Chart Component
+ *
+ */
+
+.c-chart{}
+.c-chart__label{}
+.c-chart__graph { }
+
+.c-chart--donut { }
+.c-chart--donut .c-chart__graph{height:225px;}
+.c-chart--donut .c-chart__graph--empty{height:auto;}
+
+.c-chart--bullet{}
+.c-chart--bullet .c-chart__graph{height:65px;}
+.c-chart--bullet .c-chart__graph--empty{height:auto;}
